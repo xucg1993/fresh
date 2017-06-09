@@ -129,6 +129,7 @@
 <style lang="less" scoped>
   .index {
     margin-top: 46px;
+    margin-bottom: 64px
     /*margin-bottom: 100px;*/
   }
   .m-img {

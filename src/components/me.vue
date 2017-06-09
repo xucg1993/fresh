@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 40px">
+  <div style="margin-top: 46px;margin-bottom: 64px">
     <blur :blur-amount=3 :url="url">
       <p class="center"><img :src="url"></p>
     </blur>
