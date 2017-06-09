@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
   import { Group, XNumber, XSwitch } from 'vux'
 
   export default {

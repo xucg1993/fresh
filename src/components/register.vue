@@ -33,7 +33,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .register {
     margin-top: 60px;
   }

@@ -12,7 +12,7 @@
     position: fixed!important;
   }
 </style>
-<script>
+<script scoped>
   import { XHeader, Actionsheet, TransferDom } from 'vux'
 
 

@@ -20,7 +20,7 @@
     </tabbar>
   <!--</div>-->
 </template>
-<style>
+<style scoped>
   .footer{
     height:50px;
     background-color: rgb(235, 233, 233) !important;

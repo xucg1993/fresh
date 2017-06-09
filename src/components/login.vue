@@ -95,7 +95,7 @@ loading:
   }
 </script>
 
-<style lang="less">
+<style scoped lang="less">
   .login {
     margin-top: 60px;
   }

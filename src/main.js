@@ -25,9 +25,7 @@ const routes = [
       {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
       {path: '/cart', component: function (resolve) { require(['./components/cart'], resolve)}},
       {path: '/me', component: function (resolve) { require(['./components/me'], resolve)}},
-      {path: '/register', component: function (resolve) { require(['./components/register'], resolve)}},
-      {path: '/footer', component: function (resolve) { require(['./components/footer'], resolve)}},
-      {path: '/header', component: function (resolve) { require(['./components/header'], resolve)}}
+      {path: '/commodity', component: function (resolve) { require(['./components/commodity'], resolve)}}
     ]
   }
  ]
