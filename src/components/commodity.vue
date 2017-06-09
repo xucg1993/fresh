@@ -1,6 +1,6 @@
 <template>
 <div style="margin-top: 46px;margin-bottom: 64px">
-  <group-title>rows = 2</group-title>
+  <group-title>商品</group-title>
   <grid :rows="2">
     <grid-item class="gridim" link="/"  v-for="i in 29" :key="i">
       <div style="margin-top: 0px;">
