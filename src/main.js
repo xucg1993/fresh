@@ -27,7 +27,8 @@ const routes = [
       {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
       {path: '/cart', component: function (resolve) { require(['./components/cart/cart'], resolve)}},//购物车
       {path: '/my', component: function (resolve) { require(['./components/my/my'], resolve)}},//我的
-      {path: '/classification/food', component: function (resolve) { require(['./components/classification/food'], resolve)}}//蔬菜
+      {path: '/classification/food', component: function (resolve) { require(['./components/classification/food'], resolve)}},//蔬菜
+      {path: '/commodity', component: function (resolve) { require(['./components/classification/commodity'], resolve)}}//蔬菜
     ]
   }
  ]

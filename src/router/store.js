@@ -4,17 +4,26 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  isLoading: false,
-  direction: 'forward'
+  msg:''
+}
+const actions = {
+  saveName({commit},msg){
+    commit('saveMsg',msg)
+  }
+}
+const mutations = {
+  saveMsg(state,msg){
+    state.msg = msg;
+  }
+}
+const getter = {
+  showState(state){
+    console.log(state.msg)
+  }
 }
 export default new Vuex.Store({
   state,
-  mutations: {
-    UPDATE_LOADING (state, status) {
-      state.isLoading = status
-    },
-    UPDATE_DIRECTION (state, direction) {
-      state.direction = direction
-    }
-  }
+  getter,
+  mutations,
+  actions
 })

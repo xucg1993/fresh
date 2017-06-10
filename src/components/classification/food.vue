@@ -2,14 +2,13 @@
 <div class="commodity" style="margin-top: 46px;margin-bottom: 64px">
   <group-title>{{ food }}</group-title>
   <grid :rows="2">
-    <grid-item class="gridim" link="/"  v-for="food in foodLists" v-bind:id="food.foodid">
+    <grid-item class="gridim" link="/commodity/123"  v-for="food in foodLists" v-bind:id="food.foodid">
       <div style="margin-top: 0px;">
         <masker style="border-radius: 2px;" :opacity="0">
           <div class="m-img" v-bind:style="{ backgroundImage: 'url(' + food.foodpath + ')'}"></div>
           <div slot="content" class="m-title">
             {{ food.foodname }}
-            <!--<br/>-->
-            <!--<span class="m-time">2016-03-18</span>-->
+            <span class="m-time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥{{ food.cleanfoodprice }}/斤</span>
           </div>
         </masker>
       </div>
@@ -83,7 +82,7 @@
   .m-time {
     font-size: 12px;
     padding-top: 4px;
-    border-top: 1px solid #f0f0f0;
+    /*border-top: 1px solid #f0f0f0;*/
     display: inline-block;
     margin-top: 5px;
   }
