@@ -5,7 +5,7 @@
     <grid-item class="gridim" link="/"  v-for="food in foodLists" v-bind:id="food.foodid">
       <div style="margin-top: 0px;">
         <masker style="border-radius: 2px;" :opacity="0">
-          <div class="m-img" style="background-image:url(https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg)"></div>
+          <div class="m-img" v-bind:style="{ backgroundImage: 'url(' + food.foodpath + ')'}"></div>
           <div slot="content" class="m-title">
             {{ food.foodname }}
             <!--<br/>-->
@@ -30,7 +30,7 @@
     },
     data(){
       return{
-        food:'商丘',
+        food:'蔬菜',
         foodLists:[]
         }
     },
