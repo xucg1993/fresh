@@ -27,7 +27,7 @@ const routes = [
       {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
       {path: '/cart', component: function (resolve) { require(['./components/cart'], resolve)}},
       {path: '/me', component: function (resolve) { require(['./components/me'], resolve)}},
-      {path: '/commodity', component: function (resolve) { require(['./components/commodity'], resolve)}}
+      {path: '/food', component: function (resolve) { require(['./components/food'], resolve)}}
     ]
   }
  ]
