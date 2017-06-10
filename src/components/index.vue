@@ -6,27 +6,27 @@
 
       <group-title>分类</group-title>
       <grid>
-        <grid-item link="/commodity" >
+        <grid-item link="/" >
           <img slot="icon" src="../assets/grid/日用百货.png">
           <span slot="label">{{ '日用' }}</span>
         </grid-item>
-        <grid-item :link="{ path: '/commodity'}">
+        <grid-item :link="{ path: '/classification/food'}">
           <img slot="icon" src="../assets/grid/蔬菜.png">
           <span slot="label">{{ '蔬菜' }}</span>
         </grid-item>
-        <grid-item link="/commodity">
+        <grid-item link="/">
           <img slot="icon" src="../assets/grid/蔬菜水果.png">
           <span slot="label">{{ '瓜果' }}</span>
         </grid-item>
-        <grid-item link="/commodity" >
+        <grid-item link="/" >
           <img slot="icon" src="../assets/grid/生鲜.png">
           <span slot="label">{{ '海鲜' }}</span>
         </grid-item>
-        <grid-item :link="{ path: '/commodity'}">
+        <grid-item :link="{ path: '/'}">
           <img slot="icon" src="../assets/grid/红酒.png">
           <span slot="label">{{ '酒类' }}</span>
         </grid-item>
-        <grid-item link="/commodity">
+        <grid-item link="/">
           <img slot="icon" src="../assets/grid/薯条.png">
           <span slot="label">{{ '零食' }}</span>
         </grid-item>

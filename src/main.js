@@ -8,7 +8,7 @@ import App from './App'
 // import Login from './components/login'
 // import Index from './components/index'
 import {LoadingPlugin} from 'vux'
-import PageTransition from '@/components/PageTransition'
+import PageTransition from '@/components/assembly/PageTransition'
 import { AjaxPlugin } from 'vux'
 
 Vue.use(AjaxPlugin)
@@ -25,9 +25,9 @@ const routes = [
       // {path: '', component: login},
       // {path: '', component: index},
       {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
-      {path: '/cart', component: function (resolve) { require(['./components/cart'], resolve)}},//购物车
-      {path: '/me', component: function (resolve) { require(['./components/me'], resolve)}},//我的
-      {path: '/food', component: function (resolve) { require(['./components/food'], resolve)}}//蔬菜
+      {path: '/cart', component: function (resolve) { require(['./components/cart/cart'], resolve)}},//购物车
+      {path: '/my', component: function (resolve) { require(['./components/my/my'], resolve)}},//我的
+      {path: '/classification/food', component: function (resolve) { require(['./components/classification/food'], resolve)}}//蔬菜
     ]
   }
  ]
