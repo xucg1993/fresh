@@ -1,13 +1,13 @@
 <template>
-<div style="margin-top: 46px;margin-bottom: 64px">
-  <group-title>商品</group-title>
+<div class="commodity" style="margin-top: 46px;margin-bottom: 64px">
+  <group-title>{{ food }}</group-title>
   <grid :rows="2">
-    <grid-item class="gridim" link="/"  v-for="i in 29" :key="i">
+    <grid-item class="gridim" link="/"  v-for="food in foodLists" v-bind:id="food.foodid">
       <div style="margin-top: 0px;">
         <masker style="border-radius: 2px;" :opacity="0">
           <div class="m-img" style="background-image:url(https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg)"></div>
           <div slot="content" class="m-title">
-            VUX
+            {{ food.foodname }}
             <!--<br/>-->
             <!--<span class="m-time">2016-03-18</span>-->
           </div>
@@ -19,7 +19,8 @@
 </template>
 <script>
   import { Grid, GridItem, GroupTitle,Masker } from 'vux'
-
+  import Vue from 'vue'
+  var getFoodListURL = 'http://192.168.199.117:8081/food/getFoodList.action';
   export default {
     components: {
       Grid,
@@ -27,10 +28,21 @@
       GroupTitle,
       Masker
     },
-    methods: {
-      onItemClick () {
-        console.log('on item click')
-      }
+    data(){
+      return{
+        food:'商丘',
+        foodLists:[]
+        }
+    },
+    created(){
+      var that = this;
+      this.$http.post(getFoodListURL).then(function (res) {
+        that.foodLists = res.data.data;
+        console.log(res);
+      })
+        .catch(function (err) {
+          console.log(err);
+        })
     }
   }
 </script>

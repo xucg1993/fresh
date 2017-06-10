@@ -9,7 +9,9 @@ import App from './App'
 // import Index from './components/index'
 import {LoadingPlugin} from 'vux'
 import PageTransition from '@/components/PageTransition'
+import { AjaxPlugin } from 'vux'
 
+Vue.use(AjaxPlugin)
 Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(LoadingPlugin)
