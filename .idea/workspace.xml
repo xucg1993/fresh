@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="194eb7ba-0f93-42e4-b826-4ac536be55ad" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Hello.vue" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/PageTransition.vue" afterPath="$PROJECT_DIR$/src/components/assembly/PageTransition.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/cart.vue" afterPath="$PROJECT_DIR$/src/components/cart/cart.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/food.vue" afterPath="$PROJECT_DIR$/src/components/classification/food.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/footer.vue" afterPath="$PROJECT_DIR$/src/components/assembly/footer.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/header.vue" afterPath="$PROJECT_DIR$/src/components/assembly/header.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/me.vue" afterPath="$PROJECT_DIR$/src/components/my/my.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/index.vue" afterPath="$PROJECT_DIR$/src/components/index.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -431,7 +421,7 @@
       <workItem from="1496977033731" duration="2153000" />
       <workItem from="1496979813394" duration="14339000" />
       <workItem from="1497076461607" duration="187000" />
-      <workItem from="1497077029124" duration="9914000" />
+      <workItem from="1497077029124" duration="9924000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1496978174097</created>
@@ -531,11 +521,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497102516141</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="更新">
+      <created>1497103081202</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1497103081202</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70936000" />
+    <option name="totallyTimeSpent" value="70946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
