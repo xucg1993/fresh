@@ -1,13 +1,20 @@
 <template>
   <div>
- <span></span>
+    <span class="m-time">{{ fo }}</span>
   </div>
 </template>
 <script>
   export default{
+    data(){
+      return{
+        fo : ''
+        }
+    },
     created (){
-        let userInfo = this.$route.query;
-        console.log(userInfo)
+      var that = this;
+      let userInfo = this.$route.query;
+      that.fo = userInfo.page
+      console.log(userInfo.page)
     }
   }
 </script>
