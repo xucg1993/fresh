@@ -1,23 +1,37 @@
 <template>
   <div style="margin-top: 60px">
   <group title="购物车">
-
-    <x-number title="黄瓜" v-model="roundValue" button-style="round" :min="0" :max="100"></x-number>
-    <x-number title="西蓝花" v-model="roundValue1" button-style="round" :min="0" :max="100"></x-number>
-    <x-number title="白菜" v-model="roundValue2" button-style="round" :min="0" :max="100"></x-number>
-    <x-number title="西瓜" v-model="roundValue3" button-style="round" :min="0" :max="100"></x-number>
+    <x-table :cell-bordered="false" style="background-color:#fff;">
+      <thead>
+      <tr>
+        <th>名称</th>
+        <th>价格</th>
+        <th style="width: 50%">数量/重量</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>你猜</td>
+        <td>$jiaqian</td>
+        <td>
+          <x-number v-model="roundValue" button-style="round" step="0.1" :min="0.5" :max="100"></x-number>
+        </td>
+      </tr>
+      </tbody>
+    </x-table>
   </group>
   </div>
 </template>
 
 <script scoped>
-  import { Group, XNumber, XSwitch } from 'vux'
+  import { Group, XNumber, XSwitch,XTable } from 'vux'
 
   export default {
     components: {
       XNumber,
       Group,
-      XSwitch
+      XSwitch,
+      XTable
     },
     data () {
       return {

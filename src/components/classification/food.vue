@@ -2,7 +2,7 @@
 <div class="commodity" style="margin-top: 46px;margin-bottom: 64px">
   <group-title>{{ food }}</group-title>
   <grid :rows="2">
-    <grid-item class="gridim" :link="{path: '/commodity?page='+food.foodid}"  v-for="food in foodLists" v-bind:id="food.foodid">
+    <grid-item class="gridim" :link="{path: '/commodity?foodid='+food.foodid}"  v-for="food in foodLists" v-bind:id="food.foodid">
       <div style="margin-top: 0px;">
         <masker style="border-radius: 2px;" :opacity="0">
           <div class="m-img" v-bind:style="{ backgroundImage: 'url(' + food.foodpath + ')'}"></div>
