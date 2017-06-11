@@ -2,7 +2,7 @@
   <div style="margin-top: 46px;margin-bottom: 64px">
     <group title="购物车">
       <x-table :cell-bordered="false" style="background-color:#fff;">
-        <thead>
+        <thead v-if="cartlist.length > 0">
         <tr>
           <th>名称</th>
           <th>价格</th>
@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         <tr v-if="cartlist.length <= 0">
-          <td colspan="4" height="400px"><span class="kong">空空如也也，快去选购吧</span></td>
+          <td colspan="4" height="400px"><span class="kong">空空如也，快去选购吧</span></td>
         </tr>
         <tr  v-for="cart in cartlist" >
           <td>{{cart.foodname}}</td>
@@ -20,7 +20,7 @@
           <td>
             <x-number v-model="cart.weightnumber" button-style="round" step="0.1" :min="0.5" :max="100" fillable  @on-change="editCar(cart.goodsid,cart.foodprice,cart.weightnumber)"></x-number>
           </td>
-          <td>删除</td>
+          <td><span @click="deleteGoods(cart.goodsid)">删除</span></td>
         </tr>
         </tbody>
       </x-table>
@@ -36,15 +36,19 @@
 </template>
 
 <script scoped>
-  import {Group, XNumber, XSwitch, XTable,Box, Flexbox, FlexboxItem, XButton} from 'vux'
-  var getCartListURL = 'http://192.168.199.117:8081/cart/getCartList.action';
-  var insertCartURL = 'http://192.168.199.117:8081/cart/editCartList.action';
+  import {Group, XNumber, XSwitch, XTable,Box, Flexbox, FlexboxItem, XButton,Confirm, TransferDomDirective as TransferDom} from 'vux'
+  var getCartListURL = 'http://192.168.199.117:8081/cart/getCartList.action';//购物车列表接口
+  var editCartURL = 'http://192.168.199.117:8081/cart/editCartList.action';//修改购物车物品接口
+  var deleteGoodsURL = 'http://192.168.199.117:8081/cart/deleteGoods.action';//删除物品接口
   export default {
+    directives: {
+      TransferDom
+    },
     components: {
       XNumber,
       Group,
       XSwitch,
-      XTable,Box, Flexbox, FlexboxItem, XButton
+      XTable,Box, Flexbox, FlexboxItem, XButton,Confirm
     },
     data () {
       return {
@@ -68,12 +72,9 @@
       },
       editCar: function (foodid,foodprice,weightnumber) {
         var that = this;
-        this.$http.post(insertCartURL + '?goodsid=' + foodid + '&weightnumber=' + weightnumber + '&price=' + (foodprice * weightnumber).toFixed(2)).then(function (res) {
+        this.$http.post(editCartURL + '?goodsid=' + foodid + '&weightnumber=' + weightnumber + '&price=' + (foodprice * weightnumber).toFixed(2)).then(function (res) {
           if (res.data.errorCode == 0){
-//            that.$vux.toast.show({
               console.log(res.data.message);
-//              text: res.data.message
-//            })
           }
           console.log(res.data.errorCode);
           console.log(res.data);
@@ -81,6 +82,33 @@
           .catch(function (err) {
             console.log(err);
           })
+      },
+      deleteGoods:function (foodid) {
+        var that = this;
+        this.$vux.confirm.show({
+          title: '提示',
+          content: '确定删除该物品吗？',
+          onShow () {
+            console.log('开始')
+          },
+          onHide () {
+            console.log('结束')
+          },
+          onCancel () {
+            console.log('取消')
+          },
+          onConfirm () {
+            console.log('确定')
+            that.$http.post(deleteGoodsURL + '?goodsid=' + foodid).then(function (res) {
+              if (res.data.errorCode == 0){
+                that.$vux.toast.show({
+                  text: res.data.message
+                })
+                window.location.reload(1000);
+              }
+            })
+          }
+        })
       }
     }
   }

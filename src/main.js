@@ -5,14 +5,19 @@ import Vuex from 'vuex'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
-import {LoadingPlugin,ToastPlugin,AjaxPlugin} from 'vux'
+import {LocalePlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, WechatPlugin, AjaxPlugin, AppPlugin} from 'vux'
 import PageTransition from '@/components/assembly/PageTransition'
 
-Vue.use(AjaxPlugin)
 Vue.use(Vuex)
 Vue.use(VueRouter)
-Vue.use(LoadingPlugin)
+Vue.use(DevicePlugin)
 Vue.use(ToastPlugin)
+Vue.use(AlertPlugin)
+Vue.use(ConfirmPlugin)
+Vue.use(LoadingPlugin)
+Vue.use(WechatPlugin)
+Vue.use(AjaxPlugin)
+Vue.use(LocalePlugin)
 
 const routes = [
   {

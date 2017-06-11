@@ -97,7 +97,7 @@
 <style scoped lang="less">
   .ximg-demo {
     width: 100%;
-    height: 500px;
+    height: 350px;
   }
 
   .ximg-error {
