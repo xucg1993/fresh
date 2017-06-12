@@ -43,36 +43,17 @@
         </div>
       </masker>
     </div>
-    <div style="margin: 10px;overflow: hidden;">
-      <masker style="border-radius: 2px;" color="F9C90C" :opacity="0.8">
-        <div class="m-img" style="background-image:url(https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg)"></div>
-        <div slot="content" class="m-title">
-          VUX
-          <br/>
-          <span class="m-time">2016-03-18</span>
-        </div>
-      </masker>
-    </div>
-    <div style="margin: 10px;overflow: hidden;">
-      <masker style="border-radius: 2px;" color="F9C90C" :opacity="0.8">
-        <div class="m-img" style="background-image:url(https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg)"></div>
-        <div slot="content" class="m-title">
-          VUX
-          <br/>
-          <span class="m-time">2016-03-18</span>
-        </div>
-      </masker>
-    </div>
-    <div style="margin: 10px;overflow: hidden;">
-      <masker style="border-radius: 2px;" color="F9C90C" :opacity="0.8">
-        <div class="m-img" style="background-image:url(https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg)"></div>
-        <div slot="content" class="m-title">
-          VUX
-          <br/>
-          <span class="m-time">2016-03-18</span>
-        </div>
-      </masker>
-    </div>
+    <!--<div style="margin: 10px;overflow: hidden;">-->
+      <!--<masker style="border-radius: 2px;" color="F9C90C" :opacity="0.8">-->
+        <!--<div class="m-img" style="background-image:url(https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg)"></div>-->
+        <!--<div slot="content" class="m-title">-->
+          <!--VUX-->
+          <!--<br/>-->
+          <!--<span class="m-time">2016-03-18</span>-->
+        <!--</div>-->
+      <!--</masker>-->
+    <!--</div>-->
+  <!---->
     </div>
   </div>
 </template>
@@ -124,13 +105,13 @@
         demo06_list: urlList,
         list: [{
           title: '洗颜新潮流！人气洁面皂排行榜',
-          img: 'https://cdn.xiaotaojiang.com/uploads/82/1572ec37969ee263735262dc017975/_.jpg'
+          img: 'http://imgsrc.baidu.com/baike/pic/item/a50f4bfbfbedab64d9546f70f436afc379311e5f.jpg'
         }, {
           title: '美容用品 & 日用品（上）',
-          img: 'https://cdn.xiaotaojiang.com/uploads/59/b22e0e62363a4a652f28630b3233b9/_.jpg'
+          img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497288915241&di=4c57a589b6ac89dbb4550e5a5b7af37c&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Ffcfaaf51f3deb48f14c464f0fa1f3a292df5786b.jpg'
         }, {
           title: '远离车内毒气，日本车载空气净化器精选',
-          img: 'https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg'
+          img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497288930932&di=c2bfcbca747eb9d6e85f7d4ffef5cdd1&imgtype=0&src=http%3A%2F%2Fpic.qbaobei.com%2Fthumb%2FUploads%2FPicture%2F2016-10-24%2F580dbb9e71c8b_20-13_0_crop.jpg'
         }]
       }
     }

@@ -5,7 +5,7 @@
         <img slot="icon" src="../../assets/xiaocai.png">
         <!--<span slot="label">Wechat</span>-->
       </tabbar-item>
-      <tabbar-item show-dot link="/cart">
+      <tabbar-item link="/cart"> <!--show-dot -->
         <img slot="icon" src="../../assets/car.png">
         <!--<span slot="label">订单</span>-->
       </tabbar-item>
@@ -13,7 +13,7 @@
         <!--<img slot="icon" src="../assets/dingdan.png">-->
         <!--&lt;!&ndash;<span slot="label">订单</span>&ndash;&gt;-->
       <!--</tabbar-item>-->
-      <tabbar-item  link="/my"><!--badge="99+"-->
+      <tabbar-item  link="/me"><!--badge="99+"-->
         <img slot="icon" src="../../assets/my.png">
         <!--<span slot="label">News</span>-->
       </tabbar-item>
@@ -33,11 +33,19 @@
   import { Tabbar, TabbarItem, Group, Cell } from 'vux'
 
   export default {
+      data(){
+      return{
+//        total:0
+      }
+      },
     components: {
       Tabbar,
       TabbarItem,
       Group,
       Cell
-    }
+    },
+    created(){
+
+      }
   }
 </script>
