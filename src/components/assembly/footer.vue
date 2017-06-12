@@ -13,7 +13,7 @@
         <!--<img slot="icon" src="../assets/dingdan.png">-->
         <!--&lt;!&ndash;<span slot="label">订单</span>&ndash;&gt;-->
       <!--</tabbar-item>-->
-      <tabbar-item  link="/me"><!--badge="99+"-->
+      <tabbar-item  link="/my"><!--badge="99+"-->
         <img slot="icon" src="../../assets/my.png">
         <!--<span slot="label">News</span>-->
       </tabbar-item>

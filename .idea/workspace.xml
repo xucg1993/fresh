@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="194eb7ba-0f93-42e4-b826-4ac536be55ad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/index.vue" afterPath="$PROJECT_DIR$/src/components/index.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/assembly/footer.vue" afterPath="$PROJECT_DIR$/src/components/assembly/footer.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,17 +48,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="footer.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/assembly/footer.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/index.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
@@ -167,10 +167,10 @@
         <option value="$PROJECT_DIR$/src/components/classification/food.vue" />
         <option value="$PROJECT_DIR$/src/plugins/toast/index.js" />
         <option value="$PROJECT_DIR$/src/components/classification/commodity.vue" />
-        <option value="$PROJECT_DIR$/src/components/assembly/footer.vue" />
         <option value="$PROJECT_DIR$/src/components/cart/cart.vue" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/components/index.vue" />
+        <option value="$PROJECT_DIR$/src/components/assembly/footer.vue" />
       </list>
     </option>
   </component>
@@ -453,7 +453,7 @@
       <workItem from="1496977033731" duration="2153000" />
       <workItem from="1496979813394" duration="14339000" />
       <workItem from="1497076461607" duration="187000" />
-      <workItem from="1497077029124" duration="63875000" />
+      <workItem from="1497077029124" duration="64524000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1496978174097</created>
@@ -644,11 +644,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497279031373</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="更新">
+      <created>1497279138011</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1497279138011</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124897000" />
+    <option name="totallyTimeSpent" value="125546000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1024,14 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/assembly/footer.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/cart/cart.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -1059,6 +1058,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="107" column="236" lean-forward="false" selection-start-line="107" selection-start-column="236" selection-end-line="107" selection-end-column="236" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/assembly/footer.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding />
         </state>
       </provider>
