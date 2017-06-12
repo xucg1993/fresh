@@ -6,17 +6,17 @@
     <x-table :cell-bordered="false" style="background-color:#fff;">
       <thead>
       <tr>
-        <th>菜名</th>
+        <th>名称</th>
         <th>价格</th>
-        <th style="width: 50%">重量（/斤）</th>
+        <th style="width: 50%">规格</th>
       </tr>
       </thead>
       <tbody>
       <tr>
         <td>{{foodname}}</td>
-        <td>${{ (cleanfoodprice * roundValue).toFixed(2)}}</td>
+        <td>￥{{ (cleanfoodprice * roundValue).toFixed(2)}}</td>
         <td>
-          <x-number v-model="roundValue" button-style="round" step="0.1" :min="0.5" :max="100"></x-number>
+          <x-number v-model="roundValue" button-style="round" step="1" :min="1" :max="100"></x-number>
         </td>
       </tr>
       </tbody>

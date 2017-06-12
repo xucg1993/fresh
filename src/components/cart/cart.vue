@@ -6,7 +6,7 @@
         <tr>
           <th>名称</th>
           <th>价格</th>
-          <th style="width: 50%">数量/重量</th>
+          <th style="width: 50%">数量</th>
           <th>操作</th>
         </tr>
         </thead>
@@ -14,14 +14,16 @@
         <tr v-if="cartlist.length <= 0">
           <td colspan="4" height="400px"><span class="kong">空空如也，快去选购吧</span></td>
         </tr>
-        <tr  v-for="cart in cartlist" >
+        <tr v-for="cart in cartlist">
           <td>{{cart.foodname}}</td>
-          <td>${{ (cart.foodprice * cart.weightnumber).toFixed(2) }}</td>
+          <td><input style="width: 30px" type="number" :ref="cart.foodid" :value="(cart.foodprice * cart.weightnumber).toFixed(2)" readonly/></td>
           <td>
-            <x-number v-model="cart.weightnumber" button-style="round" step="0.1" :min="0.5" :max="100" fillable  @on-change="editCar(cart.goodsid,cart.foodprice,cart.weightnumber)"></x-number>
+            <x-number v-model="cart.weightnumber" button-style="round" step="1" :min="1" :max="100" fillable
+                      @on-change="editCar(cart.goodsid,cart.foodprice,cart.weightnumber)"></x-number>
           </td>
           <td><span @click="deleteGoods(cart.goodsid)">删除</span></td>
         </tr>
+        <td colspan="4">总价：{{ total }}</td>
         </tbody>
       </x-table>
     </group>
@@ -36,7 +38,18 @@
 </template>
 
 <script scoped>
-  import {Group, XNumber, XSwitch, XTable,Box, Flexbox, FlexboxItem, XButton,Confirm, TransferDomDirective as TransferDom} from 'vux'
+  import {
+    Group,
+    XNumber,
+    XSwitch,
+    XTable,
+    Box,
+    Flexbox,
+    FlexboxItem,
+    XButton,
+    Confirm,
+    TransferDomDirective as TransferDom
+  } from 'vux'
   var getCartListURL = 'http://192.168.199.117:8081/cart/getCartList.action';//购物车列表接口
   var editCartURL = 'http://192.168.199.117:8081/cart/editCartList.action';//修改购物车物品接口
   var deleteGoodsURL = 'http://192.168.199.117:8081/cart/deleteGoods.action';//删除物品接口
@@ -48,18 +61,20 @@
       XNumber,
       Group,
       XSwitch,
-      XTable,Box, Flexbox, FlexboxItem, XButton,Confirm
+      XTable, Box, Flexbox, FlexboxItem, XButton, Confirm
     },
     data () {
       return {
         roundValue: 1,
-        cartlist : []
+        cartlist: [],
+        totlprice: 0
       }
     },
     created(){
       var that = this;
       this.$http.post(getCartListURL).then(function (res) {
         that.cartlist = res.data.data;
+        var cartlists = that.cartlist
         console.log(res.data.data);
       })
         .catch(function (err) {
@@ -70,11 +85,11 @@
       change (val) {
         console.log('change', val)
       },
-      editCar: function (foodid,foodprice,weightnumber) {
+      editCar: function (foodid, foodprice, weightnumber) {
         var that = this;
         this.$http.post(editCartURL + '?goodsid=' + foodid + '&weightnumber=' + weightnumber + '&price=' + (foodprice * weightnumber).toFixed(2)).then(function (res) {
-          if (res.data.errorCode == 0){
-              console.log(res.data.message);
+          if (res.data.errorCode == 0) {
+            console.log(res.data.message);
           }
           console.log(res.data.errorCode);
           console.log(res.data);
@@ -83,7 +98,7 @@
             console.log(err);
           })
       },
-      deleteGoods:function (foodid) {
+      deleteGoods: function (foodid) {
         var that = this;
         this.$vux.confirm.show({
           title: '提示',
@@ -100,7 +115,7 @@
           onConfirm () {
             console.log('确定')
             that.$http.post(deleteGoodsURL + '?goodsid=' + foodid).then(function (res) {
-              if (res.data.errorCode == 0){
+              if (res.data.errorCode == 0) {
                 that.$vux.toast.show({
                   text: res.data.message
                 })
@@ -110,12 +125,21 @@
           }
         })
       }
+    },
+    computed:{
+      total:function () {
+        var total = 0;
+        this.cartlist.forEach(function (good) {
+          total += good.foodprice * good.weightnumber;
+        })
+        return total;
+      }
     }
   }
 </script>
 <style>
-  .kong{
-   color: #a9a8a6;
+  .kong {
+    color: #a9a8a6;
     font-size: 12px;
   }
 </style>
