@@ -16,7 +16,7 @@
         <td>{{foodname}}</td>
         <td>￥{{ (cleanfoodprice * roundValue).toFixed(2)}}</td>
         <td>
-          <x-number v-model="roundValue" button-style="round" step="1" :min="1" :max="100"></x-number>
+          <x-number v-model="roundValue" button-style="round" :step="1" :min="1" :max="100"></x-number>
         </td>
       </tr>
       </tbody>

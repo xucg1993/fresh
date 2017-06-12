@@ -16,14 +16,14 @@
         </tr>
         <tr v-for="cart in cartlist">
           <td>{{cart.foodname}}</td>
-          <td><input style="width: 30px" type="number" :ref="cart.foodid" :value="(cart.foodprice * cart.weightnumber).toFixed(2)" readonly/></td>
+          <td>￥{{(cart.foodprice * cart.weightnumber).toFixed(2)}}</td>
           <td>
-            <x-number v-model="cart.weightnumber" button-style="round" step="1" :min="1" :max="100" fillable
+            <x-number v-model="cart.weightnumber" button-style="round" :step="1" :min="1" :max="100" fillable
                       @on-change="editCar(cart.goodsid,cart.foodprice,cart.weightnumber)"></x-number>
           </td>
           <td><span @click="deleteGoods(cart.goodsid)">删除</span></td>
         </tr>
-        <td colspan="4">总价：{{ total }}</td>
+        <td colspan="4">总价：￥{{ total }}</td>
         </tbody>
       </x-table>
     </group>
@@ -65,9 +65,7 @@
     },
     data () {
       return {
-        roundValue: 1,
-        cartlist: [],
-        totlprice: 0
+        cartlist: []
       }
     },
     created(){
@@ -91,8 +89,6 @@
           if (res.data.errorCode == 0) {
             console.log(res.data.message);
           }
-          console.log(res.data.errorCode);
-          console.log(res.data);
         })
           .catch(function (err) {
             console.log(err);
