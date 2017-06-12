@@ -105,7 +105,7 @@
         demo06_list: urlList,
         list: [{
           title: '洗颜新潮流！人气洁面皂排行榜',
-          img: 'http://imgsrc.baidu.com/baike/pic/item/a50f4bfbfbedab64d9546f70f436afc379311e5f.jpg'
+          img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497289196243&di=23f991c8a8492180f0ad6348dec5a800&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161021%2Fc3bd79c81c3048559c66736202c1beb2_th.jpg'
         }, {
           title: '美容用品 & 日用品（上）',
           img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497288915241&di=4c57a589b6ac89dbb4550e5a5b7af37c&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Ffcfaaf51f3deb48f14c464f0fa1f3a292df5786b.jpg'
