@@ -94,14 +94,14 @@
       }
     },
     created(){
-      var that = this;
-      this.$http.post(getCartListURL).then(function (res) {
-        that.cartlist = res.data.data;
-        console.log(res.data.data);
-      })
-        .catch(function (err) {
-          console.log(err);
-        })
+          var that = this;
+          this.$http.post(getCartListURL).then(function (res) {
+            that.cartlist = res.data.data;
+            console.log(res.data.data);
+          })
+            .catch(function (err) {
+              console.log(err);
+            })
     },
     methods: {
       change (val) {
@@ -139,7 +139,12 @@
                 that.$vux.toast.show({
                   text: res.data.message
                 })
-                window.location.reload(1000);
+                that.$http.post(getCartListURL).then(function (res) {
+                  that.cartlist = res.data.data;
+                  console.log(res.data.data);
+                })
+//                window.location.reload(1000);
+
               }
             })
           }
