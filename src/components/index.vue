@@ -10,9 +10,9 @@
           <img slot="icon" src="../assets/grid/日用百货.png">
           <span slot="label">{{ '日用' }}</span>
         </grid-item>
-        <grid-item :link="{ path: '/classification/food'}">
+        <grid-item :link="{ path: '/classification/goods'}">
           <img slot="icon" src="../assets/grid/蔬菜.png">
-          <span slot="label">{{ '蔬菜' }}</span>
+          <span slot="label">{{ '饮料' }}</span>
         </grid-item>
         <grid-item link="/">
           <img slot="icon" src="../assets/grid/蔬菜水果.png">

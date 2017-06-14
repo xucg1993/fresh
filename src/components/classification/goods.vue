@@ -1,14 +1,12 @@
 <template>
 <div class="commodity" style="margin-top: 46px;margin-bottom: 64px">
-  <group-title>{{ food }}</group-title>
+  <group-title>{{ goods }}</group-title>
   <grid :rows="2">
-    <grid-item class="gridim" :link="{path: '/commodity?foodid='+food.foodid}"  v-for="food in foodLists" v-bind:id="food.foodid">
+    <grid-item class="gridim" :link="{path: '/commodity?goodsid='+goods.goodsid}"  v-for="goods in goodsList" v-bind:id="goods.goodsid">
       <div style="margin-top: 0px;">
         <masker style="border-radius: 2px;" :opacity="0">
-          <div class="m-img" v-bind:style="{ backgroundImage: 'url(' + food.foodpath + ')'}"></div>
-          <div slot="content" class="m-title">
-            {{ food.foodname }}
-            <span class="m-time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥{{ food.cleanfoodprice }}/斤</span>
+          <div class="m-img" v-bind:style="{ backgroundImage: 'url(' + goods.goodsphoto + ')'}"></div>
+          <div slot="content" class="m-title">{{goods.goodsname}}<span class="m-time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￥{{ goods.retailprice }}</span>
           </div>
         </masker>
       </div>
@@ -19,7 +17,7 @@
 <script>
   import { Grid, GridItem, GroupTitle,Masker } from 'vux'
   import Vue from 'vue'
-  var getFoodListURL = 'http://192.168.199.117:8081/food/getFoodList.action';
+  var getGoodsListURL = 'http://192.168.199.117:8081/goods/getGoodsList.action';
   export default {
     components: {
       Grid,
@@ -29,14 +27,14 @@
     },
     data(){
       return{
-        food:'蔬菜',
-        foodLists:[]
+        goods:'商品列表',
+        goodsList:[]
         }
     },
     created(){
       var that = this;
-      this.$http.post(getFoodListURL).then(function (res) {
-        that.foodLists = res.data.data;
+      this.$http.post(getGoodsListURL).then(function (res) {
+        that.goodsList = res.data.data;
         console.log(res);
       })
         .catch(function (err) {
@@ -50,7 +48,7 @@
     padding: 35px 10px!important;
   }
   .m-img {
-    margin-top: -23px;
+    margin-top: -35px;
     padding-bottom: 33%;
     display: block;
     position: relative;
@@ -70,11 +68,11 @@
     font-weight: 500;
     font-size: 16px;
     position: absolute;
-    left: 0;
+    left: -15px;
     right: 0;
     width: 100%;
     text-align: center;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     margin-top: 140px;
   }

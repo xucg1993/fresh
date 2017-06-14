@@ -1,6 +1,6 @@
 <template>
     <!--<br>-->
-    <x-header class="heade">生鲜果蔬商城</x-header>
+    <x-header class="heade">商城</x-header>
     <!--<br>-->
 </template>
 <style>

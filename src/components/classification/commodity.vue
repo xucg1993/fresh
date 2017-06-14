@@ -1,20 +1,21 @@
 <template>
   <div style="margin-top: 46px;margin-bottom: 64px">
-    <x-img :src="foodpath" class="ximg-demo" error-class="ximg-error" :offset="-100"
+    <x-img :src="goodsphoto" class="ximg-demo" error-class="ximg-error" :offset="-100"
            container="#vux_view_box_body"></x-img>
     <load-more tip="以上均为实物拍摄" :show-loading="false" background-color="#fbf9fe"></load-more>
     <x-table :cell-bordered="false" style="background-color:#fff;">
       <thead>
       <tr>
-        <th>名称</th>
+        <th colspan="3">{{goodsname}}</th>
+      </tr>
+      <tr>
         <th>价格</th>
         <th style="width: 50%">规格</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td>{{foodname}}</td>
-        <td>￥{{ (cleanfoodprice * roundValue).toFixed(2)}}</td>
+        <td>￥{{ (retailprice * roundValue).toFixed(2)}}</td>
         <td>
           <x-number v-model="roundValue" button-style="round" :step="1" :min="1" :max="100"></x-number>
         </td>
@@ -33,7 +34,7 @@
 <script>
   import {XNumber, XImg, XTable, LoadMore, Group, Box, Flexbox, FlexboxItem, XButton, Toast} from 'vux'
   import Vue from 'vue'
-  var getFoodByIdURL = 'http://192.168.199.117:8081/food/getFoodByFoodId.action';
+  var getGoodsidByIdURL = 'http://192.168.199.117:8081/goods/getGoodsById.action';
   var insertCartURL = 'http://192.168.199.117:8081/cart/insertCart.action';
   export default{
     components: {
@@ -51,22 +52,22 @@
     data(){
       return {
         roundValue: 1,
-        foodname: '',
-        cleanfoodprice: 0,
-        foodid: '',
-        foodpath: '',
+        goodsname: '',
+        retailprice: 0,
+        goodsphoto: '',
         weight: '',
-        stock: ''
+        stock: '',
+        colour: 'wda2'
       }
     },
     created (){
       var that = this;
-      var foodid = this.$route.query.foodid;
-      this.$http.post(getFoodByIdURL + '?foodid=' + foodid).then(function (res) {
-        that.foodname = res.data.data.foodname;
-        that.cleanfoodprice = res.data.data.cleanfoodprice;
-        that.foodpath = res.data.data.foodpath;
-        console.log(res.data.data.foodpath);
+      var goodsid = this.$route.query.goodsid;
+      this.$http.post(getGoodsidByIdURL + '?goodsid=' + goodsid).then(function (res) {
+        that.goodsname = res.data.data.goodsname;
+        that.retailprice = res.data.data.retailprice;
+        that.goodsphoto = res.data.data.goodsphoto;
+        console.log(res.data.data.goodsphoto);
       })
         .catch(function (err) {
           console.log(err);
@@ -74,12 +75,13 @@
     },
     methods: {
       addCar: function () {
-        var foodid = this.$route.query.foodid;
+        var goodsid = this.$route.query.goodsid;
         var roundValue = this.roundValue;
-        var cleanfoodprice = this.cleanfoodprice;
+        var retailprice = this.retailprice;
+        var colour = this.colour;
         var that = this;
-        this.$http.post(insertCartURL + '?goodsid=' + foodid + '&weightnumber=' + roundValue + '&price=' + (cleanfoodprice * roundValue).toFixed(2)).then(function (res) {
-          if (res.data.errorCode == 0){
+        this.$http.post(insertCartURL + '?goodsid=' + goodsid + '&number=' + roundValue + '&totalprice=' + (retailprice * roundValue).toFixed(2) + '&colour=' + colour).then(function (res) {
+          if (res.data.errorCode == 0) {
             that.$vux.toast.show({
               text: res.data.message
             })
