@@ -52,8 +52,8 @@
     <flexbox class="cartfooter">
       <flexbox-item><div class="flex-demo">总价:￥{{ total }}</div></flexbox-item>
       <flexbox-item>
-        <x-button v-if="cartlist.length > 0" type="warn" @click.native="goAdvanceorder">提交订单</x-button>
-        <x-button class="butt" v-if="cartlist.length <= 0" type="warn">提交订单</x-button>
+        <x-button v-if="cartlist.length > 0" type="warn" @click.native="goAdvanceorder">去结算</x-button>
+        <x-button class="butt" v-if="cartlist.length <= 0" type="warn">去结算</x-button>
       </flexbox-item>
     </flexbox>
 
