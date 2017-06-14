@@ -2,7 +2,7 @@
 <div class="commodity" style="margin-top: 46px;margin-bottom: 64px">
   <group-title>{{ goods }}</group-title>
   <grid :rows="2">
-    <grid-item class="gridim" :link="{path: '/commodity?goodsid='+goods.goodsid}"  v-for="goods in goodsList" v-bind:id="goods.goodsid">
+    <grid-item class="gridim" :link="{path: '/classification/commodity?goodsid='+goods.goodsid}"  v-for="goods in goodsList" v-bind:id="goods.goodsid">
       <div style="margin-top: 0px;">
         <masker style="border-radius: 2px;" :opacity="0">
           <div class="m-img" v-bind:style="{ backgroundImage: 'url(' + goods.goodsphoto + ')'}"></div>

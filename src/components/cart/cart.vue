@@ -26,7 +26,7 @@
         <!--</tbody>-->
       <!--</x-table>-->
     <!--</group>-->
-<div v-for="cart in cartlist" >
+<div v-for="cart in cartlist" style="border-bottom:1px solid #e4dfe1">
     <div class="weui-media-box weui-media-box_appmsg">
       <div style="width: 100px;height: 100px" class="weui-media-box__hd">
         <img :link="{path: '/commodity?goodsid='+cart.goodsid}" :src="cart.goodsphoto" alt="" class="weui-media-box__thumb">
@@ -44,23 +44,24 @@
     <flexbox-item></flexbox-item>
     <flexbox-item class="flex-demo"><span @click="deleteGoods(cart.goodsid)">删除</span></flexbox-item>
   </flexbox>
-
 </div>
-    <divider>总价</divider>
-    <flexbox orient="vertical">
-      <flexbox-item><div class="flex-demo">￥{{ total }}</div></flexbox-item>
+    <div v-if="cartlist.length <= 0">
+      <span class="kong">空空如也，快去选购吧</span>
+    </div>
+    <divider></divider>
+    <flexbox class="cartfooter">
+      <flexbox-item><div class="flex-demo">总价:￥{{ total }}</div></flexbox-item>
+      <flexbox-item>
+        <x-button v-if="cartlist.length > 0" type="warn" @click.native="goAdvanceorder">提交订单</x-button>
+        <x-button class="butt" v-if="cartlist.length <= 0" type="warn">提交订单</x-button>
+      </flexbox-item>
     </flexbox>
-    <box gap="10px 10px">
-      <flexbox>
-        <flexbox-item>
-          <x-button v-if="cartlist.length > 0" type="warn" @click.native="">提交订单</x-button>
-        </flexbox-item>
-      </flexbox>
-    </box>
+
+
   </div>
 </template>
 
-<script scoped>
+<script>
   import {
     Group,
     XNumber,
@@ -97,6 +98,7 @@
           var that = this;
           this.$http.post(getCartListURL).then(function (res) {
             that.cartlist = res.data.data;
+//            if(window.localStorage){alert("浏览支持localStorage")}else{alert("浏览暂不支持localStorage")}
             console.log(res.data.data);
           })
             .catch(function (err) {
@@ -141,14 +143,19 @@
                 })
                 that.$http.post(getCartListURL).then(function (res) {
                   that.cartlist = res.data.data;
-                  console.log(res.data.data);
                 })
 //                window.location.reload(1000);
-
               }
             })
           }
         })
+      },
+      goAdvanceorder () {
+        sessionStorage.cartList = JSON.stringify(this.cartlist);
+//        sessionStorage.removeItem("cartList");
+//        sessionStorage.clear();
+//        console.log(JSON.parse(sessionStorage.cartList));
+        this.$router.push({ path :'./orders/advanceorder' })
       }
     },
     computed: {
@@ -162,7 +169,7 @@
     }
   }
 </script>
-<style lang="less">
+<style lang="less" scoped>
   .kong {
     color: #a9a8a6;
     font-size: 12px;
@@ -177,5 +184,14 @@
     /*background-color: #20b907;*/
     border-radius: 4px;
     background-clip: padding-box;
+  }
+  .cartfooter{
+    height:45px;
+    background-color: rgb(235, 233, 233);
+    position: fixed;
+    bottom: 63px;
+  }
+  .butt{
+    background-color: #cbc6c8;
   }
 </style>

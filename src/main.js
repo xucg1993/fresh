@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
+import Index from './components/index'
 import {LocalePlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, WechatPlugin, AjaxPlugin, AppPlugin} from 'vux'
 import PageTransition from '@/components/assembly/PageTransition'
 
@@ -18,6 +19,7 @@ Vue.use(LoadingPlugin)
 Vue.use(WechatPlugin)
 Vue.use(AjaxPlugin)
 Vue.use(LocalePlugin)
+const index = Index
 const routes = [
   {
     path: '/',
@@ -25,12 +27,13 @@ const routes = [
     component: PageTransition,
     children: [
       // {path: '', component: login},
-      // {path: '', component: index},
-      {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
+      {path: '', component: index},
+      // {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
       {path: '/cart', component: function (resolve) { require(['./components/cart/cart'], resolve)}},//购物车
       {path: '/my', component: function (resolve) { require(['./components/my/my'], resolve)}},//我的
       {path: '/classification/goods', component: function (resolve) { require(['./components/classification/goods'], resolve)}},//蔬菜
-      {path: '/commodity', component: function (resolve) { require(['./components/classification/commodity'], resolve)}}//蔬菜
+      {path: '/classification/commodity', component: function (resolve) { require(['./components/classification/commodity'], resolve)}},//蔬菜
+      {path: '/orders/advanceorder', component: function (resolve) { require(['./components/orders/advanceorder'], resolve)}}//蔬菜
     ]
   }
  ]
