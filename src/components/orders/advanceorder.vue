@@ -13,7 +13,7 @@
       <div class="weui-cell vux-cell-form-preview">
         <div class="weui-form-preview__bd">
           <div class="weui-form-preview__item" v-for="cart in cartlist">
-            <label class="weui-form-preview__label">{{cart.goodsname}}</label>
+            <label class="weui-form-preview__label">{{cart.goodsname}} x {{cart.number}}</label>
             <span class="weui-form-preview__value">{{cart.unitprice * cart.number}}</span>
           </div>
         </div>

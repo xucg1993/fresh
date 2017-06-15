@@ -27,8 +27,8 @@ const routes = [
     component: PageTransition,
     children: [
       // {path: '', component: login},
-      {path: '', component: index},
-      // {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
+      // {path: '', component: index},
+      {path: '', component: function (resolve) { require(['./components/index'], resolve)}},
       {path: '/cart', component: function (resolve) { require(['./components/cart/cart'], resolve)}},//购物车
       {path: '/my', component: function (resolve) { require(['./components/my/my'], resolve)}},//我的
       {path: '/classification/goods', component: function (resolve) { require(['./components/classification/goods'], resolve)}},//蔬菜
